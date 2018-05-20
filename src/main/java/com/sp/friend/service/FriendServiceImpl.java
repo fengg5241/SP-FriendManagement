@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.sp.friend.dao.FriendDao;
+import com.sp.friend.model.RelationshipType;
+import com.sp.friend.model.SPError;
+import com.sp.friend.model.SPException;
 
 @Service
 public class FriendServiceImpl implements FriendService {
@@ -18,7 +22,7 @@ public class FriendServiceImpl implements FriendService {
 	FriendDao friendDao;
 	
 	@Override
-	public void connect(String email1, String email2) {
+	public void connect(String email1, String email2) throws SPException {
 		int email1Id = userService.save(email1);
 		int email2Id = userService.save(email2);
 		
@@ -29,6 +33,18 @@ public class FriendServiceImpl implements FriendService {
 			email2Id = tempId;
 		}
 		
+		boolean isFriend = friendDao.checkIsFriend(email1Id, email2Id);
+		if(isFriend) {
+			throw new SPException(HttpStatus.FORBIDDEN, SPError.FRIEND_EXISTED);
+		}
+		int relationship1 = friendDao.getRelationship(email1Id, email2Id);
+		if(relationship1 == RelationshipType.BLOCK.getValue()) {
+			throw new SPException(HttpStatus.FORBIDDEN, SPError.BLOCK_RELATIONSHIP);
+		}
+		int relationship2 = friendDao.getRelationship(email2Id, email1Id);
+		if(relationship2 == RelationshipType.BLOCK.getValue()) {
+			throw new SPException(HttpStatus.FORBIDDEN, SPError.BLOCK_RELATIONSHIP);
+		}
 		friendDao.connect(email1Id, email2Id);
 		
 		
@@ -54,7 +70,7 @@ public class FriendServiceImpl implements FriendService {
 	}
 
 	@Override
-	public void subscribe(String requestor, String target) {
+	public void subscribe(String requestor, String target) throws SPException {
 		int requestorId = userService.save(requestor);
 		int targetId = userService.save(target);
 		friendDao.subscribe(requestorId, targetId);
