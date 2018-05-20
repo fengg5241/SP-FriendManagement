@@ -1,0 +1,306 @@
+{
+	"id": "1eaaf25d-276e-b11c-c5c2-bd1607d28538",
+	"name": "SP-Friend",
+	"description": "",
+	"order": [
+		"404c59db-070b-e852-3a08-a68d29bbf99b",
+		"beea2707-9c9e-b9f2-49d4-06ba61d28571",
+		"9c59ff65-2dd4-503a-1c66-69f9175ac010",
+		"107f1cef-2dcf-dff2-342d-64cd0f1541c1",
+		"4c0ea902-469c-b36a-c2c9-8c086de5fa34",
+		"58d1a7d4-3231-a257-ad82-07f9eced28ce"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1520001878377,
+	"owner": "134893",
+	"public": false,
+	"requests": [
+		{
+			"id": "107f1cef-2dcf-dff2-342d-64cd0f1541c1",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://35.198.250.48/friend-0.0.1-SNAPSHOT/subscribe",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "requestor",
+					"value": "a@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "target",
+					"value": "b@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520173497960,
+			"name": "localhost:8080/subscribe",
+			"description": "subscribe to updates from an email address.",
+			"collectionId": "1eaaf25d-276e-b11c-c5c2-bd1607d28538",
+			"responses": []
+		},
+		{
+			"id": "404c59db-070b-e852-3a08-a68d29bbf99b",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://35.198.250.48/friend-0.0.1-SNAPSHOT/connect",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "friends",
+					"value": "a@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "friends",
+					"value": "b@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520173481806,
+			"name": "localhost:8080/connect",
+			"description": "Add friend connection",
+			"collectionId": "1eaaf25d-276e-b11c-c5c2-bd1607d28538",
+			"responses": []
+		},
+		{
+			"id": "4c0ea902-469c-b36a-c2c9-8c086de5fa34",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://35.198.250.48/friend-0.0.1-SNAPSHOT/block",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "requestor",
+					"value": "a@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "target",
+					"value": "b@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520173505622,
+			"name": "localhost:8080/block",
+			"description": "block updates from an email address.",
+			"collectionId": "1eaaf25d-276e-b11c-c5c2-bd1607d28538",
+			"responses": []
+		},
+		{
+			"id": "58d1a7d4-3231-a257-ad82-07f9eced28ce",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://35.198.250.48/friend-0.0.1-SNAPSHOT/retrieveActiveFriends?sender=a@gmail.com&text=Hello World! kate@example.com",
+			"queryParams": [
+				{
+					"key": "sender",
+					"value": "a@gmail.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "text",
+					"value": "Hello World! kate@example.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "friends",
+					"value": "a@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "friends",
+					"value": "b@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520173513267,
+			"name": "localhost:8080/retrieveActiveFriends",
+			"description": "retrieve all email addresses that can receive updates from an email address.\nhas not blocked updates from \"john@example.com\", and\nat least one of the following:\nhas a friend connection with \"john@example.com\"\nhas subscribed to updates from \"john@example.com\"",
+			"collectionId": "1eaaf25d-276e-b11c-c5c2-bd1607d28538",
+			"responses": []
+		},
+		{
+			"id": "9c59ff65-2dd4-503a-1c66-69f9175ac010",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://35.198.250.48/friend-0.0.1-SNAPSHOT/retrieveCommonFriends",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "friends",
+					"value": "a@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "friends",
+					"value": "b@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520173491362,
+			"name": "localhost:8080/retrieveCommonFriends",
+			"description": "Retrieve Common Friends ",
+			"collectionId": "1eaaf25d-276e-b11c-c5c2-bd1607d28538",
+			"responses": []
+		},
+		{
+			"id": "beea2707-9c9e-b9f2-49d4-06ba61d28571",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://35.198.250.48/friend-0.0.1-SNAPSHOT/retrieveFriends?email=a@gmail.com",
+			"queryParams": [
+				{
+					"key": "email",
+					"value": "a@gmail.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "friends",
+					"value": "a@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "friends",
+					"value": "b@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520173465567,
+			"name": "localhost:8080/retrieveFriends",
+			"description": "retrieveFriends all friends by email",
+			"collectionId": "1eaaf25d-276e-b11c-c5c2-bd1607d28538",
+			"responses": []
+		}
+	]
+}
